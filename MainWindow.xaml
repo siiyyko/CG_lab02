@@ -1,0 +1,66 @@
+﻿<Window x:Class="lab02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab02"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="850" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        
+        <Canvas x:Name="mainCanvas" Grid.Row="0">
+            
+        </Canvas>
+
+        <Canvas x:Name="axisCanvas" Grid.Row="0">
+
+        </Canvas>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="pointsTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+
+            <Button Grid.Column="1" VerticalAlignment="Center" Click="DrawParameterical">
+                <TextBlock Text="Draw parameterically" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+            </Button>
+            
+            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                <Button Click="DrawBezierCurve" VerticalAlignment="Center" Width="60" Margin="10">
+                    <TextBlock Text="Draw"></TextBlock>
+                </Button>
+                <Button Click="ClearCanvas" VerticalAlignment="Center" Width="60" Margin="10">
+                    <TextBlock Text="Clear"></TextBlock>
+                </Button>
+
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Enter t:"></TextBlock>
+                    <TextBox x:Name="ParameterTextBox"></TextBox>
+                    <Button Click="CalculatePolynoms">
+                        <TextBlock Text="Calculate B-in polynoms"></TextBlock>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Enter N of points:"></TextBlock>
+                    <TextBox x:Name="PointsNumberTextBox"></TextBox>
+                    <Button Click="CalculateCoords">
+                        <TextBlock Text="Show coords"></TextBlock>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+
+            
+        </Grid>
+    </Grid>
+</Window>
